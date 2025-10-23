@@ -532,7 +532,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (document.title.includes("Sobre o Usuário")) {
 
     
-        fetch('/usuarioatual')
+        fetch('/api/usuarioatual')
             .then(response => response.json())
             .then(usuario => {
                 const nomeCompleto = `${usuario.nome} ${usuario.sobrenome}`;

@@ -5,18 +5,11 @@
 {% block conteudoPagina %}
 <div class="container-perfil-usuario">
     <div class="perfil-header">
-        <div class="foto-perfil">
-            <img src="/static/imagens/usuarios/user_default.png" alt="Foto do usuário">
-            <button class="botao-editar-foto">📷</button>
-        </div>
         <div class="info-usuario">
             <!-- Por enquanto, conteúdo estático -->
             <h1 id="nome-usuario">Dr. João Silva</h1>
             <p class="tipo-usuario" id="tipo-usuario">Médico - Cardiologista</p>
             <p class="email-usuario" id="email-usuario">joao.silva@clinica.com</p>
-            <div class="status-usuario">
-                <span class="status ativo" id="status-usuario">● Online</span>
-            </div>
         </div>
     </div>
 
@@ -116,23 +109,6 @@
                 <button type="submit" class="botao-salvar">Alterar Senha</button>
             </form>
         </div>
-
-        <!-- Aba Administração -->
-        <div id="aba-admin" class="aba-conteudo">
-            <div class="admin-actions">
-                <a href="{{ url_for('gerenciarusuarios') }}" class="botao-admin">
-                    <i class="fa-solid fa-users"></i>
-                    Gerenciar Usuários
-                </a>
-                <a href="#" class="botao-admin">
-                    <i class="fa-solid fa-chart-bar"></i>
-                    Relatórios do Sistema
-                </a>
-                <a href="#" class="botao-admin">
-                    <i class="fa-solid fa-cog"></i>
-                    Configurações do Sistema
-                </a>
-            </div>
         </div>
     </div>
 </div>
