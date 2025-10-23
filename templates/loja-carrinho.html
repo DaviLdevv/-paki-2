@@ -1,0 +1,113 @@
+<!-- ================= CONTEÚDO PRINCIPAL ================= -->
+  {% extends 'base.html'%}
+  {% block tituloPagina%}
+    <title>Meu Carrinho</title>
+  {% endblock %}
+  {% block conteudoPagina%}
+    <main>           
+        <div class="container_pagina_carrinho">
+            <div id="conteudo_pagina_carrinho">
+                <section>
+                    <table id="tabela-produtos-carrinho">
+                        <thead>
+                            <tr>
+                                <th>PRODUTO</th>
+                                <th>PREÇO</th>
+                                <th>QUANTIDADE</th>
+                                <th>TOTAL</th>
+                                <th>REMOVER</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td>
+                                    <div class="produto-carrinho">
+                                        <div class="img-produto-carrinho">
+                                            <img src="/static/imagens/produtos/Whey Protein.jpg" alt="Whey Protein">
+                                        </div>
+                                        <div class="info-produto">
+                                            <h1>Whey Proteina</h1>
+                                            <h2>Suplemento Nutricional</h2>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>R$ 1000</p>
+                                </td>
+                                <td>
+                                    <div class="qnt-produto-carrinho">
+                                        <button class="diminuir-quantidade">-</button>
+                                        <input type="text" disabled >
+                                        <button class="aumentar-quantidade">+</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>R$ 1000</p>
+                                </td>
+                                <td>
+                                    <button class="btn-remover-carrinho">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td>
+                                    <div class="produto-carrinho">
+                                        <div class="img-produto-carrinho">
+                                            <img src="/static/imagens/produtos/Whey Protein.jpg" alt="Whey Protein">
+                                        </div>
+                                        <div class="info-produto">
+                                                <h1>Whey Proteina</h1>
+                                                <h2>Suplemento Nutricional</h2>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>R$ 1000</p>
+                                </td>
+                                <td>
+                                    <div class="qnt-produto-carrinho">
+                                        <button class="diminuir-quantidade">-</button>
+                                        <input type="text" disabled >
+                                        <button class="aumentar-quantidade">+</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>R$ 1000</p>
+                                </td>
+                                <td>
+                                    <button class="btn-remover-carrinho">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr> 
+                            
+
+                        </tbody>
+                    </table>
+                </section>
+                <aside>
+                    <h1>Resumo do Carrinho</h1>
+                    <div id="container-resumo-pedido">
+                       <div class="resumo-itens">
+                        <span class="titulo">Subtotal:</span> <span class="valor">R$ 140,00</span>
+                       </div>
+                       <div class="resumo-itens">
+                        <span class="titulo">Total:</span> <span class="valor">R$ 160,00</span>
+                       </div>
+                       <div class="btn-group-resumo">
+                            <button>Fazer Pedido</button>
+                            <button>Limpar carrinho</button>
+                        </div>
+                    </div>
+                    
+                </aside>               
+            </div>
+        </div>
+        
+        <div>
+            <button id="botao-tema">🌙</button>
+        </div>
+    </main>
+  {% endblock %}

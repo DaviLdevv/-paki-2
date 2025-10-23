@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- ✅ Livrarias de Icones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css">
+  
+  <!-- ✅ CSS principal -->
+  <link rel="stylesheet" href="{{url_for ('static', filename='/02-css/style.css')}}">
+
+  <!-- ✅ Fontes movidas para cá -->
+  <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="{{url_for ('static', filename='/imagens/logos/logo_paki_aba.png')}}">  
+</head>
+<body>
+    <!-- ================= CONTEÚDO PRINCIPAL ================= -->
+    <main class="pagina-login">
+        <div class="container-login">
+            <div class="formulario-login">
+                <div class="logo-login">
+                    <img src="{{url_for ('static', filename='/imagens/logos/logo_paki_aba.png')}}" alt="Logo P.A.K.I">
+                    <h1>P.A.K.I</h1>
+                    <p>Seu painel de saúde digital</p>
+                </div>
+
+                <form id="formLogin" action="/login" method="post">
+                    <div class="grupo-formulario">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required placeholder="Seu e-mail cadastrado">
+                    </div>
+                    
+                   
+
+                    <div class="grupo-formulario">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" required placeholder="Sua senha">
+                    </div>
+                    
+                    <div class="opcoes-login">
+                        <div class="lembrar-senha">
+                            <input type="checkbox" id="lembrar">
+                            <label for="lembrar">Lembrar-me</label>
+                        </div>
+                        
+                        <a href="{{url_for ('recuperarSenha')}}" class="esqueci-senha">Esqueci minha senha</a>
+                    </div>
+                    
+                    <button type="submit" class="botao-login">Entrar</button>
+                    
+                    <div class="cadastro-link">
+                        <p>Não tem uma conta? <a href="{{url_for ('cadastro')}}">Cadastre-se agora</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <!-- ================= JS ================= -->
+    <script src="{{url_for ('static', filename='/03-js/script.js')}}"></script>
+</body>
+</html>

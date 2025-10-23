@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block tituloPagina %}
+    <title>Gerenciar Usuários - P.A.K.I</title>
+{% endblock %}
+{% block conteudoPagina %}
+<div class="container-gerenciar-usuarios">
+    <div class="cabecalho-gerenciamento">
+        <h1>Gerenciar Usuários</h1>
+        <div class="barra-pesquisa-usuarios">
+            <input type="text" placeholder="Pesquisar usuários...">
+            <button class="botao-pesquisa">🔍</button>
+        </div>
+    </div>
+
+    <div class="filtros-usuarios">
+        <button class="filtro-botao ativo" data-filtro="todos">Todos</button>
+        <button class="filtro-botao" data-filtro="medico">Médicos</button>
+        <button class="filtro-botao" data-filtro="paciente">Pacientes</button>
+        <button class="filtro-botao" data-filtro="admin">Administradores</button>
+    </div>
+
+    <div class="tabela-usuarios" id="tabela-usuarios">
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuário</th>
+                    <th>Email</th>
+                    <th>Tipo</th>
+                    <th>Status</th>
+                    <th>Data Cadastro</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Usuário Médico -->
+                <tr>
+                    <td>
+                        <div class="usuario-info">
+                            <img src="/static/imagens/usuarios/user_default.png" alt="Avatar" class="usuario-avatar">
+                            <div>
+                                <strong>Dr. João Silva</strong>
+                                <div>CRM: 123456</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>joao.silva@clinica.com</td>
+                    <td><span class="badge-tipo badge-medico">Médico</span></td>
+                    <td><span class="status-ativo">Ativo</span></td>
+                    <td>15/03/2023</td>
+                    <td>
+                        <div class="acoes-usuario">
+                            <a href="/sobreUsuario?id=1" class="botao-acao botao-visualizar">👁️</a>
+                            <button class="botao-acao botao-excluir">🗑️</button>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Usuário Paciente -->
+                <tr>
+                    <td>
+                        <div class="usuario-info">
+                            <img src="/static/imagens/usuarios/user_default.png" alt="Avatar" class="usuario-avatar">
+                            <div>
+                                <strong>Maria Santos</strong>
+                                <div>Paciente</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>maria.santos@email.com</td>
+                    <td><span class="badge-tipo badge-paciente">Paciente</span></td>
+                    <td><span class="status-ativo">Ativo</span></td>
+                    <td>22/06/2023</td>
+                    <td>
+                        <div class="acoes-usuario">
+                            <a href="/sobreUsuario?id=2" class="botao-acao botao-visualizar">👁️</a>
+                         
+                            <button class="botao-acao botao-excluir">🗑️</button>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Usuário Administrador -->
+                <tr>
+                    <td>
+                        <div class="usuario-info">
+                            <img src="/static/imagens/usuarios/user_default.png" alt="Avatar" class="usuario-avatar">
+                            <div>
+                                <strong>Admin Sistema</strong>
+                                <div>Administrador</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>admin@sistema.com</td>
+                    <td><span class="badge-tipo badge-admin">Admin</span></td>
+                    <td><span class="status-ativo">Ativo</span></td>
+                    <td>10/01/2023</td>
+                    <td>
+                        <div class="acoes-usuario">
+                            <a href="/sobreUsuario?id=3" class="botao-acao botao-visualizar">👁️</a>
+                           
+                            <button class="botao-acao botao-excluir">🗑️</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

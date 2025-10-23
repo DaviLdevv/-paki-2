@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block tituloPagina%}
+    
+    {% endblock %}
+  <!--  Livrarias de Icones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css">
+  
+  <!--  CSS principal -->
+  <link rel="stylesheet" href="{{url_for ('static', filename='/02-css/style.css')}}">
+
+  <!--  Fontes de texto -->
+  <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="{{url_for ('static', filename='/imagens/logos/logo_paki_aba.png')}}">  
+</head>
+<body>
+    <!-- ================= HEADER ================= -->
+    <header>
+        <p>Tipo de usuario atual: {{ tipo_site }}</p>
+            <div class="container_header">
+              <button id="botao-menu-mobile">☰</button>
+              <img src="{{url_for ('static', filename='/imagens/logos/logo_paki.png')}}" alt="Logo da P.A.K.I" class="logo_paki" loading="lazy">
+              
+              <a href="{{url_for ('sobremim')}}" class="area-usuario-header">
+                <i class="fa fa-user"></i>
+                <h1>Ronaldo</h1>
+                <h2 class="tipo-usuario">Paciente</h2>
+                <a href="/logout">Sair</a>
+              </a>
+            </div>
+            
+            <nav class="menu_nav">
+                {% if tipo_site == 'nutricionista' %}
+                    <ul class="menu_nav_lista">
+                        <li><a href="{{url_for ('index')}}">Home</a></li>
+                        <li><a href="{{url_for ('sobre')}}">Quem Somos?</a></li>
+                        <li><a href="{{url_for ('funcionalidades')}}">Funcionalidades</a></li>
+                    </ul>
+                {% elif tipo_site == 'paciente' %}
+                    <ul class="menu_nav_lista">
+                        <li><a href="{{url_for ('index')}}">Home</a></li>
+                        <li><a href="{{url_for ('sobre')}}">Quem Somos?</a></li>
+                        <li><a href="{{url_for ('loja')}}">Loja</a></li>
+                        <li><a href="{{url_for ('funcionalidades')}}">Funcionalidades</a></li>
+                        <li><a href="{{url_for ('contato')}}">Redes Sociais</a></li>
+                    </ul>
+
+                {% elif tipo_site == 'admin' %}
+                    <ul class="menu_nav_lista">
+                        <li><a href="{{url_for ('index')}}">Home</a></li>
+                        <li><a href="{{url_for ('funcionalidades')}}">Painel Administrativo</a></li>
+                    </ul>
+                {% endif %}
+            </nav>
+    </header>
+
+    {% block conteudoPagina%}
+    
+    {% endblock %}
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div id="conteudo_footer">
+        <!-- Parte 1 -->
+        <div id="conteudo1_footer">
+            <div id="logo_footer">
+            <h1>
+                <img src="{{url_for ('static', filename='/imagens/logos/logo_paki.png')}}" alt="Logo da P.A.K.I" width="100" loading="lazy">
+            </h1>
+            <p>P.A.K.I seu painel de saúde digital!</p>
+            </div>
+
+            <div class="container_informacoes_footer">
+            <ul class="lista_footer">
+                <li><h3>Lojas Parceiras</h3></li>
+                <li><a href="#" class="footer_link">Saúde</a></li>
+                <li><a href="#" class="footer_link">Exercícios</a></li>
+                <li><a href="#" class="footer_link">Dieta</a></li>
+            </ul>
+
+            <ul class="lista_footer">
+                <li><h3>Produtos</h3></li>
+                <li><a href="#" class="footer_link">App</a></li>
+                <li><a href="#" class="footer_link">Desktop</a></li>
+                <li><a href="#" class="footer_link">Cloud</a></li>
+            </ul>
+            </div>
+        </div>
+
+        <!-- Parte 2 -->
+        <div id="conteudo2_footer">
+            <div id="redes_sociais_footer">
+            <a href="#" class="footer_link" id="instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="footer_link" id="facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="footer_link" id="whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+
+            <div class="mensagem_direitos">
+            <p>©2025 todos os direitos reservados</p>
+            </div>
+
+            <ul class="lista_footer_horizontal">
+            <li><a href="#" class="footer_link">Termos</a></li>
+            <li><a href="#" class="footer_link">Plano de saúde</a></li>
+            <li><a href="#" class="footer_link">Contrato</a></li>
+            </ul>
+        </div>
+        </div>
+    </footer>
+    
+    <!-- ================= JS ================= -->
+    <script src="{{url_for ('static', filename='/03-js/script.js')}}"></script>
+        
+</body>
+</html>

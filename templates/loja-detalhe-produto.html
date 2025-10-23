@@ -1,0 +1,35 @@
+<!-- ================= CONTEÚDO PRINCIPAL ================= -->
+  {% extends 'base.html'%}
+  {% block tituloPagina%}
+    <title>Whey Protein</title>
+  {% endblock %}
+  {% block conteudoPagina%}
+    <main>           
+        <div class="container_pagina_detalhe_produto">
+            <section class="conteudo_pagina_detalhe_produto">
+                <div class="container-detalhe-produto">
+                    <div id="imagem-detalhe-produto"> 
+                        <img src="/static/imagens/produtos/Whey Protein.jpg" alt="">
+                    </div>
+
+                    <div id="detalhe-produto">  
+                        <div class="descricao-produto">
+                            <h1>Whey Protein</h1>
+                            <h2>Suplemento nutricional</h2>
+                            <p>Ideal para qualquer dieta fitness e programas de treinamento, a proteína do soro do leite, em inglês Whey Protein, é a proteína em pó mais popular disponível utilizada em suplementação alimentar e esportiva</p>
+                            <h3>R$ 50</h3>    
+                        </div>
+                        <div class="btn-group-detalhe-produto">
+                            <button id="btn-adicionar-carrinho">Adicionar ao Carrinho</button>
+                            <button id="btn-comprar-agora">Comprar Agora</button>
+                        </div>                       
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div>
+            <button id="botao-tema">🌙</button>
+        </div>
+    </main>
+    {%endblock%}

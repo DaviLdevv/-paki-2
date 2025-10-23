@@ -1,0 +1,35 @@
+<!-- ================= CONTEÚDO PRINCIPAL ================= -->
+  {% extends 'base.html'%}
+  {% block tituloPagina%}
+    <title>Farinha Lactea</title>
+  {% endblock %}
+  {% block conteudoPagina%}
+     <main>           
+        <div class="container_pagina_detalhe_produto">
+            <section class="conteudo_pagina_detalhe_produto">
+                <div class="container-detalhe-produto">
+                    <div id="imagem-detalhe-produto"> 
+                        <img src="/static/imagens/produtos/farinha lactea.jpeg" alt="">
+                    </div>
+
+                    <div id="detalhe-produto">  
+                        <div class="descricao-produto">
+                            <h1>Farinha Láctea</h1>
+                            <h2>Alimento</h2>
+                            <p>Farinha Láctea Nestlé é a número 1 do Brasil com seu sabor delicioso. É fonte de zinco e ferro, nutrientes que ajudam no desenvolvimento do seu filho. Alergenicos: contpem derivados de trigo e leite, pode conter cevada, centeio, aveia e soja. Contém lactose. contém glúten.</p>
+                            <h3>R$ 8,75</h3>    
+                        </div>
+                        <div class="btn-group-detalhe-produto">
+                            <button id="btn-adicionar-carrinho">Adicionar ao Carrinho</button>
+                            <button id="btn-comprar-agora">Comprar Agora</button>
+                        </div>                       
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div>
+            <button id="botao-tema">🌙</button>
+        </div>
+    </main>
+    {%endblock%}   

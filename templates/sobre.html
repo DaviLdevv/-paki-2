@@ -1,0 +1,90 @@
+  <!-- ================= CONTEÚDO PRINCIPAL ================= -->
+  {% extends 'base.html'%}
+  {% block tituloPagina%}
+    <title>Sobre</title>
+  {% endblock %}
+  {% block conteudoPagina%}
+  <main>
+    <!-- Hero Section -->
+    <section class="about-hero">
+      <h1>Quem Somos</h1>
+      <p>Conheça a P.A.K.I e nossa missão de transformar a saúde digital no Brasil</p>
+    </section>
+    
+    <div class="about-container">
+      <!-- Missão, Visão e Valores -->
+      <section class="mission-section">
+        <h2 class="section-title">Nossa Razão de Ser</h2>
+        
+        <div class="mission-cards">
+          <div class="mission-card">
+            <i class="fas fa-bullseye"></i>
+            <h3>Missão</h3>
+            <p>Democratizar o acesso à saúde de qualidade através de tecnologia inovadora, proporcionando ferramentas que empoderam pessoas a cuidarem melhor de sua saúde e bem-estar.</p>
+          </div>
+          
+          <div class="mission-card">
+            <i class="fas fa-eye"></i>
+            <h3>Visão</h3>
+            <p>Ser a plataforma de saúde digital mais completa e acessível do Brasil, reconhecida por transformar vidas através do cuidado preventivo e personalizado.</p>
+          </div>
+          
+          <div class="mission-card">
+            <i class="fas fa-heart"></i>
+            <h3>Valores</h3>
+            <p>Inovação, Acessibilidade, Transparência, Empatia e Compromisso com resultados que realmente transformam a qualidade de vida das pessoas.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- História -->
+      <section class="history-section">
+        <h2 class="section-title">Nossa História</h2>
+        
+        <p>Fundada em 2023, a P.A.K.I nasceu da percepção de que as pessoas precisavam de uma solução integrada para cuidar de sua saúde. Observamos que muitas pessoas buscavam informações fragmentadas em diferentes aplicativos e serviços, sem ter uma visão holística de seu bem-estar.</p>
+        
+        <p>Nossa equipe multidisciplinar, composta por profissionais de saúde, tecnologia e design, uniu-se para criar uma plataforma que integrasse todos os aspectos do cuidado com a saúde: alimentação, exercícios, monitoramento de indicadores e acompanhamento profissional.</p>
+        
+        <p>Hoje, somos orgulhosos de ter ajudado milhares de brasileiros a alcançarem uma vida mais saudável e equilibrada, com ferramentas simples mas poderosas que fazem a diferença no dia a dia.</p>
+      </section>
+      
+      
+      <!-- Diferenciais -->
+      <section class="values-section">
+        <h2 class="section-title">O que nos diferencia</h2>
+        
+        <ul class="values-list">
+          <li class="value">
+            <i class="fas fa-check-circle"></i>
+            <span>Abordagem integrada de saúde que considera todos os aspectos do bem-estar</span>
+          </li>
+          
+          <li class="value">
+            <i class="fas fa-check-circle"></i>
+            <span>Recomendações baseadas em evidências científicas e acompanhamento profissional</span>
+          </li>
+          
+          <li class="value">
+            <i class="fas fa-check-circle"></i>
+            <span>Personalização baseada em suas metas, preferências e condições específicas</span>
+          </li>
+          
+          <li class="value">
+            <i class="fas fa-check-circle"></i>
+            <span>Acompanhamento de progresso com relatórios detalhados e insights acionáveis</span>
+          </li>
+          
+          <li class="value">
+            <i class="fas fa-check-circle"></i>
+            <span>Interface intuitiva e acessível para todas as idades e níveis de familiaridade tecnológica</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+    
+    <div>
+      <button id="botao-tema">🌙</button>
+    </div>
+    
+  </main>
+  {% endblock %}

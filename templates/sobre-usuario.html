@@ -1,0 +1,140 @@
+{% extends 'base.html'%}
+{% block tituloPagina %}
+    <title>Sobre o Usuário - P.A.K.I</title>
+{% endblock %}
+{% block conteudoPagina %}
+<div class="container-perfil-usuario">
+    <div class="perfil-header">
+        <div class="foto-perfil">
+            <img src="/static/imagens/usuarios/user_default.png" alt="Foto do usuário">
+            <button class="botao-editar-foto">📷</button>
+        </div>
+        <div class="info-usuario">
+            <!-- Por enquanto, conteúdo estático -->
+            <h1 id="nome-usuario">Dr. João Silva</h1>
+            <p class="tipo-usuario" id="tipo-usuario">Médico - Cardiologista</p>
+            <p class="email-usuario" id="email-usuario">joao.silva@clinica.com</p>
+            <div class="status-usuario">
+                <span class="status ativo" id="status-usuario">● Online</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="abas-perfil">
+        <button class="aba ativa" onclick="mudarAba('dados')">Dados Pessoais</button>
+        <button class="aba" onclick="mudarAba('profissional')">Informações Profissionais</button>
+        <button class="aba" onclick="mudarAba('seguranca')">Segurança</button>
+        <button class="aba" onclick="mudarAba('admin')">Administração</button>
+    </div>
+
+    <div class="conteudo-abas">
+        <!-- Aba Dados Pessoais -->
+        <div id="aba-dados" class="aba-conteudo ativa">
+            <form class="formulario-perfil">
+                <div class="linha-formulario">
+                    <div class="grupo-formulario">
+                        <label>Nome Completo</label>
+                        <input type="text" id="input-nome" value="João Silva" required>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label>Data de Nascimento</label>
+                        <input type="date" id="input-nascimento" value="1985-05-15" required>
+                    </div>
+                </div>
+                
+                <div class="linha-formulario">
+                    <div class="grupo-formulario">
+                        <label>CPF</label>
+                        <input type="text" id="input-cpf" value="123.456.789-00" required>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label>Telefone</label>
+                        <input type="tel" id="input-telefone" value="(11) 99999-9999" required>
+                    </div>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label>Endereço</label>
+                    <input type="text" id="input-endereco" value="Rua das Flores, 123 - São Paulo/SP" required>
+                </div>
+
+                <button type="submit" class="botao-salvar">Salvar Alterações</button>
+            </form>
+        </div>
+
+        <!-- Aba Informações Profissionais -->
+        <div id="aba-profissional" class="aba-conteudo">
+            <form class="formulario-perfil">
+                <div class="grupo-formulario">
+                    <label>Especialidade</label>
+                    <input type="text" id="input-especialidade" value="Cardiologia">
+                </div>
+                
+                <div class="grupo-formulario">
+                    <label>CRM/Registro</label>
+                    <input type="text" id="input-registro" value="CRM-SP 123456">
+                </div>
+
+                <div class="grupo-formulario">
+                    <label>Formação</label>
+                    <textarea id="input-formacao">Graduação em Medicina pela USP, Residência em Cardiologia pelo Incor</textarea>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label>Horário de Atendimento</label>
+                    <input type="text" id="input-horario" value="Segunda a Sexta, 08:00 às 18:00">
+                </div>
+
+                <button type="submit" class="botao-salvar">Atualizar Dados Profissionais</button>
+            </form>
+        </div>
+
+        <!-- Aba Segurança -->
+        <div id="aba-seguranca" class="aba-conteudo">
+            <form class="formulario-perfil">
+                <div class="grupo-formulario">
+                    <label>Email</label>
+                    <input type="email" id="input-email" value="joao.silva@clinica.com" required>
+                </div>
+                
+                <div class="grupo-formulario">
+                    <label>Senha Atual</label>
+                    <input type="password" placeholder="Digite sua senha atual">
+                </div>
+
+                <div class="linha-formulario">
+                    <div class="grupo-formulario">
+                        <label>Nova Senha</label>
+                        <input type="password" placeholder="Digite a nova senha">
+                    </div>
+                    <div class="grupo-formulario">
+                        <label>Confirmar Nova Senha</label>
+                        <input type="password" placeholder="Confirme a nova senha">
+                    </div>
+                </div>
+
+                <button type="submit" class="botao-salvar">Alterar Senha</button>
+            </form>
+        </div>
+
+        <!-- Aba Administração -->
+        <div id="aba-admin" class="aba-conteudo">
+            <div class="admin-actions">
+                <a href="{{ url_for('gerenciarusuarios') }}" class="botao-admin">
+                    <i class="fa-solid fa-users"></i>
+                    Gerenciar Usuários
+                </a>
+                <a href="#" class="botao-admin">
+                    <i class="fa-solid fa-chart-bar"></i>
+                    Relatórios do Sistema
+                </a>
+                <a href="#" class="botao-admin">
+                    <i class="fa-solid fa-cog"></i>
+                    Configurações do Sistema
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{url_for ('static', filename='/03-js/script.js')}}"></script>
+{% endblock %}

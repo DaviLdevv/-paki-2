@@ -1,0 +1,66 @@
+  <!-- ================= CONTEÚDO PRINCIPAL ================= -->
+  {% extends 'base.html'%}
+  {% block tituloPagina%}
+    <title>Funcionalidades</title>
+  {% endblock %}
+  {% block conteudoPagina%}
+    <main>           
+        <div class="container_pagina_funcionalidades">
+            {% if tipo_site == 'nutricionista' %}
+
+                <section class="conteudo_pagina_funcionalidades">
+                    <div class="cartao_funcionalidade">                    
+                        <img src="{{url_for ('static', filename='/imagens/funcionalidades/consulta-medico.png')}}" alt="">
+                        
+                        <div class="cartao_funcionalidade_descricao">
+                            <h1>Atender consultas</h1>
+                            <h2>Atenda e gerencie suas consultas!</h2>
+                            <a href="/consulta">Acessar</a>
+                        </div>
+                    </div>
+                </section>
+
+            {% elif tipo_site == 'paciente' %}
+
+                <section class="conteudo_pagina_funcionalidades">
+                
+                <div class="cartao_funcionalidade">                    
+                    
+                    <div class="imagem_funcionalidade">
+                        <img src="{{url_for ('static', filename='/imagens/funcionalidades/agenda-consulta.png')}}" alt="">
+                    </div>
+                
+                    
+                    <div class="cartao_funcionalidade_descricao">
+                        <h1>Agenda de consultas</h1>
+                        <h2>Agende e acompanhe sua consulta conosco! </h2>
+                        <a href="{{url_for ('consulta')}}">Acessar</a>
+                    </div>
+                </div>
+                
+                </section>
+
+            {% elif tipo_site == 'admin' %}
+                <section class="conteudo_pagina_funcionalidades">
+                    
+                    <div class="cartao_funcionalidade">                    
+                        <img src="{{url_for ('static', filename='/imagens/funcionalidades/gerenciar-usuario.png')}}" alt="">
+                        
+                        <div class="cartao_funcionalidade_descricao">
+                            <h1>Gerenciar Usuarios</h1>
+                            <h2>Exiba e gerencie os usuários do sistema! </h2>
+                            <a href="/gerenciarusuarios">Acessar</a>
+                        </div>
+                    </div>
+
+                </section>
+
+            {% endif %}
+          
+        </div>
+        
+        <div>
+            <button id="botao-tema">🌙</button>
+        </div>
+    </main>
+  {% endblock %}

@@ -1,0 +1,60 @@
+      
+  {% extends 'base.html'%}
+  {% block tituloPagina%}
+    <title>Loja</title>
+  {% endblock %}
+  {% block conteudoPagina%}
+    <main>
+        <div class="container_pagina_loja">
+            <div id="container-searchbar-produtos">
+                <div id="searchbar-produtos">
+                    <input type="text" placeholder="Digite o produto que procura...">
+                    <button id="btn-searchbar"><i class="fas fa-search"></i></button>    
+                </div>
+
+                <div class="container-carrinho">
+                    <a href="{{url_for ('lojaCarrinho')}}"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <i class="fa-solid fa-tag"></i>
+                </div>
+            </div>
+            <section class="conteudo_pagina_loja">
+
+                <div class="cartao_produto">
+                    <div class="cartao_produto_imagem">
+                        <img src="/static/imagens/produtos/Whey Protein.jpg" alt="whey protein">
+                    </div>
+                    
+                    <div class="cartao_produto_descricao">
+                        <h1>Whey Protein</h1>
+                        <h2>Suplemento Nutricional </h2>
+                        <p>R$ 50</p>
+                    </div>
+
+                    <div class="btn-group-produto">
+                        <a href="{{url_for ('detalheProduto')}}">Compre Agora</a>
+                    </div>
+                </div>
+
+                <div class="cartao_produto ">
+                    
+                    <div class="cartao_produto_imagem">
+                        <img src="/static/imagens/produtos/farinha lactea.jpeg" alt="whey protein">
+                    </div>
+                    
+                    <div class="cartao_produto_descricao">
+                        <h1>Farinha Láctea</h1>
+                        <h2>Farinha Láctea Original Nestlé</h2>
+                        <p>R$ 11,50</p>
+                    </div>
+                    <div class="btn-group-produto">
+                        <a href="{{url_for ('detalheProduto2')}}">Compre Agora</a>
+                    </div>
+                </div>  
+            </section>
+        </div>
+          
+        <div>
+            <button id="botao-tema">🌙</button>
+        </div>  
+    </main>
+{% endblock %}

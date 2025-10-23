@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <!-- ✅ Livrarias de Icones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css">
+  
+  <!-- ✅ CSS principal -->
+  <link rel="stylesheet" href="{{url_for ('static', filename='/02-css/style.css')}}">
+
+  <!-- ✅ Fontes movidas para cá -->
+  <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="{{url_for ('static', filename='/imagens/logos/logo_paki_aba.png')}}">  
+</head>
+<body>
+    <!-- ================= CONTEÚDO PRINCIPAL ================= --> 
+    <main class="pagina-cadastro">
+        <div class="container-cadastro">
+            <div id="formulario-cadastro">
+                <div class="logo-cadastro">
+                    <img src="{{url_for ('static', filename='/imagens/logos/logo_paki_aba.png')}}" alt="Logo P.A.K.I">
+                    <h1>P.A.K.I</h1>
+                    <p>Crie sua conta e comece agora!</p>
+                </div>
+                
+                <form id="formCadastro" action="/cadastro" method="POST">
+                    <div class="linha-formulario">
+                        <div class="grupo-formulario">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" required placeholder="Seu primeiro nome">
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <label for="sobrenome">Sobrenome</label>
+                            <input type="text" id="sobrenome" name="sobrenome" required placeholder="Seu sobrenome">
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="grupo-formulario">
+                            <label for="data_nascimento">Data de Nascimento</label>
+                            <input type="date" id="data_nascimento" name="data_nascimento">
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required placeholder="Seu melhor e-mail">
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="tipo-usuario">Tipo de usuario</label>
+                        <select id="tipo-usuario" name="tipo-usuario">
+                            <option value="paciente">Paciente</option>
+                            <option value="nutricionista">Nutricionista</option>
+                        </select>
+                    </div>
+                    
+                    <div class="linha-formulario">
+                        <div class="grupo-formulario">
+                            <label for="senha">Senha</label>
+                            <input type="password" id="senha" name="senha" required placeholder="Crie uma senha segura">
+                        </div>
+                        
+                        <div class="grupo-formulario">
+                            <label for="confirmar_senha">Confirmar Senha</label>
+                            <input type="password" id="confirmar_senha" name="confirmar_senha" required placeholder="Digite a senha novamente">
+                        </div>
+                    </div>
+                    
+                    <div class="linha-formulario">
+                        <div class="grupo-formulario">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                        </div>
+                        
+                        <div class="grupo-formulario">
+                            <label for="genero">Gênero</label>
+                            <select id="genero" name="genero">
+                                <option value="">Selecione</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="outro">Outro</option>
+                                <option value="prefiro_nao_informar">Prefiro não informar</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="termos-condicoes">
+                        <input type="checkbox" id="termos" name="termos" required>
+                        <label for="termos">Concordo com os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a> do P.A.K.I</label>
+                    </div>
+                    
+                    <button type="submit" id="btn-cadastrar">Criar Conta</button>
+                    
+                    <div class="login-link">
+                        <p>Já tem uma conta? <a href="{{url_for ('login')}}">Faça login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{url_for ('static', filename='/03-js/script.js')}}"></script>
+</body>
+</html>
